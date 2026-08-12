@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pycodeupdate"
+dynamic = ["version"]
+description = "A Python package that empowers developers to deliver remote updates to deployed client applications with automated version checking and seamless update management."
+readme = "README.md"
+requires-python = ">=3.12"
+
+license = "MIT"
+license-files = ["LICENSE"]
+
+authors = [
+    { name = "Virati Akiranandhan Reddy" },
+]
+
+keywords = [
+    "python",
+    "updater",
+    "software-update",
+    "remote-update",
+    "automatic-update",
+    "application-update",
+    "version-management",
+    "deployment",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+
+    "Typing :: Typed",
+]
+
+import-names = [
+    "pycodeupdate",
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://pycodeupdate.github.io/"
+Documentation = "https://pycodeupdate.readthedocs.io/"
+Repository = "https://github.com/pycodeupdate/pycodeupdate"
+Issues = "https://github.com/pycodeupdate/pycodeupdate/issues"
+Changelog = "https://pycodeupdate.github.io/changelog/"
+
+[project.scripts]
+pycodeupdate = "pycodeupdate.cli:app"
+
+[tool.hatch.version]
+path = "src/pycodeupdate/__version__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pycodeupdate"]
