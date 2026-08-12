@@ -58,7 +58,7 @@ Issues = "https://github.com/pycodeupdate/pycodeupdate/issues"
 Changelog = "https://pycodeupdate.github.io/changelog/"
 
 [project.scripts]
-pycodeupdate = "pycodeupdate.cli:main"
+pycodeupdate = "pycodeupdate.cli:app"
 
 [tool.hatch.version]
 path = "src/pycodeupdate/__version__.py"
