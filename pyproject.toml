@@ -63,6 +63,7 @@ pycodeupdate = "pycodeupdate.cli:app"
 [project.optional-dependencies]
 dev = [
     "ruff>=0.15.20",
+    "ty>=0.0.68",
 ]
 
 [tool.hatch.version]
@@ -98,3 +99,9 @@ known-first-party = ["pycodeupdate"]
 quote-style = "double"
 indent-style = "space"
 line-ending = "auto"
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+[tool.ty.rules]
+all = "error"
