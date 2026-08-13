@@ -47,6 +47,6 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v7.0.0
 
-			# Install the development dependencies and run type checking.
+      # Install ty and run type checking.
       - name: Type check
-        run: uv run --extra dev ty check
+        run: uv run --with ty ty check
