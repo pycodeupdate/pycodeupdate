@@ -1,6 +1,7 @@
 name: Ruff
 
 on:
+  # Run Ruff on changes that can affect Python code or its configuration.
   push:
     branches:
       - main
@@ -9,6 +10,7 @@ on:
       - 'pyproject.toml'
       - '.github/workflows/ruff.yml'
 
+  # Validate pull requests before they are merged into main.
   pull_request:
     branches:
       - main
@@ -17,12 +19,16 @@ on:
       - 'pyproject.toml'
       - '.github/workflows/ruff.yml'
 
+  # Allow Ruff to be run manually when needed.
   workflow_dispatch:
 
+# Cancel outdated runs when new commits are pushed to the same ref.
+# Only the latest commit needs to pass Ruff.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Ruff only needs read access to the repository.
 permissions:
   contents: read
 
@@ -32,14 +38,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Fetch the repository so Ruff can inspect the source tree.
       - name: Checkout
         uses: actions/checkout@v4.2.0
 
+      # Run all enabled Ruff lint rules from pyproject.toml.
+      # GitHub output adds inline annotations to the workflow results.
       - name: Check lint
         uses: astral-sh/ruff-action@v4.1.0
         with:
           args: check --output-format=github
 
+      # Verify that the repository is formatted with Ruff.
+      # --check keeps CI read-only, while --diff shows the required changes.
       - name: Check formatting
         uses: astral-sh/ruff-action@v4.1.0
         with:
