@@ -1,0 +1,46 @@
+name: Ruff
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.py'
+      - 'pyproject.toml'
+      - '.github/workflows/ruff.yml'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.py'
+      - 'pyproject.toml'
+      - '.github/workflows/ruff.yml'
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ruff:
+    name: Ruff
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.0
+
+      - name: Check lint
+        uses: astral-sh/ruff-action@v4.1.0
+        with:
+          args: check --output-format=github
+
+      - name: Check formatting
+        uses: astral-sh/ruff-action@v4.1.0
+        with:
+          args: format --check --diff --output-format=github
