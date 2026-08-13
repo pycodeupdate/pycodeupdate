@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - '**.py'
+      - '**/*.py'
       - 'pyproject.toml'
       - '.github/workflows/ruff.yml'
 
@@ -15,7 +15,7 @@ on:
     branches:
       - main
     paths:
-      - '**.py'
+      - '**/*.py'
       - 'pyproject.toml'
       - '.github/workflows/ruff.yml'
 
