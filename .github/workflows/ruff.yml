@@ -41,7 +41,7 @@ jobs:
     steps:
       # Fetch the repository so Ruff can inspect the source tree.
       - name: Checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v7.0.1
 
       # Run all enabled Ruff lint rules from pyproject.toml.
       # GitHub output adds inline annotations to the workflow results.
