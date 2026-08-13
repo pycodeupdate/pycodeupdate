@@ -62,8 +62,8 @@ pycodeupdate = "pycodeupdate.cli:app"
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.15.20",
-    "ty>=0.0.68",
+    "ruff>=0.16.2",
+    "ty>=0.0.69",
 ]
 
 [tool.hatch.version]
