@@ -60,6 +60,11 @@ Changelog = "https://pycodeupdate.github.io/changelog/"
 [project.scripts]
 pycodeupdate = "pycodeupdate.cli:app"
 
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.15.20",
+]
+
 [tool.hatch.version]
 path = "src/pycodeupdate/__version__.py"
 
