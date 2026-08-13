@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pycodeupdate"
 dynamic = ["version"]
-description = "A Python package that empowers developers to deliver remote updates to deployed client applications with automated version checking and seamless update management."
+description = "Remote updates for deployed Python applications."
 readme = "README.md"
 requires-python = ">=3.12"
 
