@@ -1,0 +1,3 @@
+[submodule ".agents/context"]
+	path = .agents/context
+	url = https://github.com/pycodeupdate/context.git
