@@ -1,0 +1,7 @@
+[submodule ".agents/context"]
+	path = .agents/context
+	url = https://github.com/pycodeupdate/context.git
+
+[submodule ".agents/skills"]
+	path = .agents/skills
+	url = https://github.com/pycodeupdate/skills.git
