@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * 
 * 
 
-## [0.0.1] - YYY-MM-DD
+## [0.0.1] - YYYY-MM-DD
 
 ### Added
 
